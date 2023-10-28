@@ -51,11 +51,13 @@ public class TestCase02 {
             String sonyXperiaDetailPrice = sonyXperiaDetailPriceElement.getText();
 
             // 6. Compare Product value in list and details page should be equal ($100)
-            if (sonyXperiaPrice.equals(sonyXperiaDetailPrice)) {
+/*            if (sonyXperiaPrice.equals(sonyXperiaDetailPrice)) {
                 System.out.println("Prices match: " + sonyXperiaPrice);
             } else {
                 System.out.println("Prices do not match");
-            }
+            }*/
+            Assert.assertEquals(sonyXperiaPrice, sonyXperiaDetailPrice, "Price does not match the expected Price");
+
             TakesScreenshot screenshot = ((TakesScreenshot) driver);
             File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
             FileHandler.copy(srcFile, new File("D:\\CN5\\SWT301\\selenium-webdriver-java-master\\selenium-webdriver-java-master\\src\\test\\java\\BaiTap\\textcase02.png"));
