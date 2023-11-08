@@ -41,7 +41,7 @@ public class TestCase01 {
             String expectTitle = "THIS IS DEMO SITE FOR   ";
 
             Assert.assertEquals(expectTitle, actualTitle, "Title does not match the expected title");
-
+            Thread.sleep(2000);
             // 3. Click on -> MOBILE -> menu
             WebElement mobileMenu = driver.findElement(By.xpath("//a[normalize-space()='Mobile']"));
             mobileMenu.click();
@@ -50,6 +50,7 @@ public class TestCase01 {
             WebElement dropdownElem = driver.findElement(By.xpath("//body/div[@class='wrapper']/div[@class='page']/div[@class='main-container col3-layout']/div[@class='main']/div[@class='col-wrapper']/div[@class='col-main']/div[@class='category-products']/div[@class='toolbar']/div[@class='sorter']/div[@class='sort-by']/select[1]"));
             Select optionElem = new Select(dropdownElem);
             optionElem.selectByVisibleText("Name");
+            Thread.sleep(2000);
             // 5. Verify all products are sorted by name
             TakesScreenshot screenshot = ((TakesScreenshot) driver);
             File srcFile = screenshot.getScreenshotAs(OutputType.FILE);

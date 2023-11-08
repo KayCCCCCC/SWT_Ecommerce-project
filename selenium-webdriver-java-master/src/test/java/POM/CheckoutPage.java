@@ -25,9 +25,43 @@ public class CheckoutPage {
 
     By selectNewAddress = By.xpath("//select[@id='billing-address-select']");
 
-    By newAddress = By.xpath("//select[@id='billing-address-select']");
+    By MobileLink = By.xpath("//a[normalize-space()='Mobile']");
+
+    By AddIphone = By.xpath("//li[1]//div[1]//div[3]//button[1]//span[1]//span[1]");
+
+    By CounponCode = By.xpath("//input[@id='coupon_code']");
+
+    By ApplyLink = By.xpath("//span[contains(text(),'Apply')]");
+
+    By grandtotalLink = By.cssSelector("strong span[class='price']");
     public CheckoutPage(WebDriver driver){
         this.driver = driver;
+    }
+
+    public void clickMobileLink(){
+        WebElement element = driver.findElement(MobileLink);
+        element.click();
+    }
+
+    public void clickAddIphone(){
+        WebElement element = driver.findElement(AddIphone);
+        element.click();
+    }
+
+    public void enterCode(String code){
+        WebElement element = driver.findElement(CounponCode);
+        element.clear();
+        element.sendKeys(code);
+    }
+
+    public String getgrandtotal(){
+        String grandtotal = driver.findElement(grandtotalLink).getText();
+        return grandtotal;
+    }
+
+    public void clickApply(){
+        WebElement element = driver.findElement(ApplyLink);
+        element.click();
     }
 
     public By selectNewAddress(){

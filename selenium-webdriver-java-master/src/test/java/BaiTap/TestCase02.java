@@ -50,12 +50,6 @@ public class TestCase02 {
             WebElement sonyXperiaDetailPriceElement = driver.findElement(By.xpath("//span[@class='price']"));
             String sonyXperiaDetailPrice = sonyXperiaDetailPriceElement.getText();
 
-            // 6. Compare Product value in list and details page should be equal ($100)
-/*            if (sonyXperiaPrice.equals(sonyXperiaDetailPrice)) {
-                System.out.println("Prices match: " + sonyXperiaPrice);
-            } else {
-                System.out.println("Prices do not match");
-            }*/
             Assert.assertEquals(sonyXperiaPrice, sonyXperiaDetailPrice, "Price does not match the expected Price");
 
             TakesScreenshot screenshot = ((TakesScreenshot) driver);

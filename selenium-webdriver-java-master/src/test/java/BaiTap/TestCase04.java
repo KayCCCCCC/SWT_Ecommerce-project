@@ -41,7 +41,7 @@ public class TestCase04 {
             mobileMenu.click();
 
             // 3. Trong danh sách sản phẩm di động, nhấp vào "Add To Compare" cho 2 sản phẩm di động (Sony Xperia & samsung)
-            WebElement sonyXperiaCompare = driver.findElement(By.xpath("//li[1]//div[1]//div[3]//ul[1]//li[2]//a[1]"));
+            WebElement sonyXperiaCompare = driver.findElement(By.xpath("//li[3]//div[1]//div[3]//ul[1]//li[2]//a[1]"));
             sonyXperiaCompare.click();
 
             WebElement samsungCompare = driver.findElement(By.xpath("//li[2]//div[1]//div[3]//ul[1]//li[2]//a[1]"));
